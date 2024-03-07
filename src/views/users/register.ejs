@@ -1,0 +1,99 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
+  <link rel="stylesheet" href="../css/login-register.css" />
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header.ejs') %>
+
+      <main>
+        <section class="section-register">
+          <div class="contenedor-register">
+            <div class="formulario">
+              <form name ="formulario" method="POST" action="/users/register" enctype="multipart/form-data">
+                <h2>Regístrate</h2>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-user" icon></i>
+
+                  <input type="text" name="fullName" placeholder="Nombre Completo"
+                    class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.fullName : null %>">
+                    <div class="col-8 col-lg-10">
+                      <small class="text-danger erName"></small>
+                    </div>
+                  <% if (locals.errors && errors.fullName) { %>
+                    <div class="text-danger">
+                      <%= errors.fullName.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-envelope" icon></i>
+                  <input type="text" name="email" placeholder="Correo electrónico"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                  <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                      <%= errors.email.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" name="password" placeholder="Contraseña"
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                  <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                      <%= errors.password.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" name="cfpassword" placeholder="Repite contraseña"
+                    class="form-control <%= locals.errors && errors.cfpassword ? 'is-invalid' : null %>">
+                  <% if (locals.errors && errors.cfpassword) { %>
+                    <div class="text-danger">
+                      <%= errors.cfpassword.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="input-contenedor">
+                  <div>
+                    <label>Imagen de perfil</label>
+                    <input type="file" name="avatar"
+                      class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+                    <% if (locals.errors && errors.avatar) { %>
+                      <div class="text-danger">
+                        <%= errors.avatar.msg %>
+                      </div>
+                      <% } %>
+                  </div>
+                </div>
+
+                <div>
+                  <button type="submit" class="btn btn-primary" name = "btn-enviar">Registrarme</button>
+                  <div class="registrar">
+                    <p>
+                      ¿Ya tenés cuenta? -
+                      <a class="link" href="/users/login">Iniciar Sección</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+
+  </body>
+
+  </html>

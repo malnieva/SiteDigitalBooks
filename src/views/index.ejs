@@ -1,0 +1,246 @@
+<!-- HEAD -->
+<%- include('./partials/head.ejs') %>
+  <style>
+    #galeria {
+      margin: auto;
+      width: 100%;
+      max-width: 960px;
+      padding: 0 20px 20px;
+      box-sizing: border-box;
+      column-count: 4;
+
+      /* Espacio entre columnas */
+      -moz-column-gap: 20px;
+      -webkit-column-gap: 20px;
+      column-gap: 20px;
+
+      /* Filete entre columnas */
+      /*-moz-column-rule: 1px solid #bbb;
+      -webkit-column-rule: 1px solid #bbb;
+      column-rule: 1px solid #bbb;*/
+    }
+    #galeria header {
+      -webkit-column-span: all;
+      column-span: all;
+    }
+    .linea{
+    border-top: 5px solid #fcad02;
+    margin-bottom: 40px;
+    }
+    article {
+      background: #fff;
+      border-radius: 10px;
+      border: 1.5px solid #fcb038;
+      margin: 0 0 20px 0;
+      text-align: center;
+      max-width: 100%;
+      filter: opacity(70%);
+      /*Evitamos que se corte al cambiar de columna*/
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    article img {
+      width: 100%;
+    }
+    article:hover {
+      transition: .5s ease;
+      filter: opacity(100%);
+    }
+    figure {
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    /* Móviles en horizontal o tablets en vertical */
+    @media (max-width: 767px) {
+      #galeria {
+        columns: 2;
+      }
+    }
+    /* Móviles en vertical */
+    @media (max-width: 480px) {
+      #galeria {
+        columns: 1;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('./partials/header.ejs') %>
+
+      <main>
+        <!-- SLIDER DE PRODUCTOS -->
+        <div id="carrusel-contenido">
+          <div id="carrusel-caja">
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Literario</b></h2>
+                <h1>90 minutos en el cielo</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
+
+                <a class="btn" href="products/11" target="">¡Solicitalo aquí!<span
+                    class="fas fa-angle-right"></span></a>
+              </div>
+
+              <div class="imagen-productos">
+                <a href="products/11" target="">
+                  <img src="./img/libro110a.png" alt="">
+                </a>
+              </div>
+            </div>
+
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Recreativo</b></h2>
+                <h1>El secreto de la paz personal</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
+
+                <a class="btn" href="products/3" target="">¡Solicitalo aquí!<span class="fas fa-angle-right"></span></a>
+              </div>
+
+              <div class="imagen-productos">
+                <a href="products/3" target="">
+                  <img src="./img/libro30a.png" alt="">
+                </a>
+              </div>
+            </div>
+
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Recreativo</b></h2>
+                <h1>Como emprender tu propio negocio</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
+
+                <a class="btn" href="products/4" target="">¡Solicitalo aquí!<span class="fas fa-angle-right"></span></a>
+              </div>
+
+              <div class="imagen-productos">
+                <a href="products/4" target="">
+                  <img src="./img/libro40a.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIN SLIDER DE PRODUCTOS -->
+
+        <!-- Muestra de productos en general -->
+        <section class="container-producto-mas-vendidos">
+          <header>
+            <br><br><br><br>
+            <h2>NOVEDADES MAS VENDIDAS</h2>
+            <br>
+            <div class="linea"></div>
+          </header>
+          <div class="card-list-products">
+            <article>
+              <a target=""
+                href="products/1">
+                <figure>
+                  <img src="./img/libro10a.png" alt="producto-1" />
+                  <figcaption><b>Inteligencia emocional</b></figcaption>
+                  <p class="category"><i>Divulgativo</i></p>
+                  <div class="price"><b>$15,000.00</b></div>
+                </figure>
+              </a>
+            </article>     
+            <article>
+              <a target=""
+                href="products/3">
+                <figure>
+                  <img src="./img/libro30a.png" alt="producto-1" />
+                  <figcaption><b>El secreto de la paz personal</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$35,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/5">
+                <figure>
+                  <img src="./img/libro50a.png" alt="producto-1" />
+                  <figcaption><b>Padre rico, padre pobre</b></figcaption>
+                  <p class="category"><i>Literatura</i></p>
+                  <div class="price"><b>$32,000.00</b></div>
+                </figure>
+              </a>
+            </article>  
+            <article>
+              <a target=""
+                href="products/7">
+                <figure>
+                  <img src="./img/libro70a.png" alt="producto-1" />
+                  <figcaption><b>El metodo rico</b></figcaption>
+                  <p class="category"><i>Practico</i></p>
+                  <div class="price"><b>$54,000.00</b></div>
+                </figure>
+              </a>
+            </article>        
+          </div>
+        </section>
+
+        <section class="container-producto-oferta">
+          <header>
+            <br><br>
+            <h2>PRODUCTOS EN OFERTA</h2>
+            <br>
+            <div class="linea"></div>
+          </header>
+          <div class="card-list-products">
+            <article>
+              <a target=""
+                href="products/2">
+                <figure>
+                  <img src="./img/libro20a.png" alt="producto-1" />
+                  <figcaption><b>Sabiduría Financiera</b></figcaption>
+                  <p class="category"><i>Literatura</i></p>
+                  <div class="price"><b>$25,000.00</b></div>
+                </figure>
+              </a>
+            </article>  
+            <article>
+              <a target=""
+                href="products/4">
+                <figure>
+                  <img src="./img/libro40a.png" alt="producto-1" />
+                  <figcaption><b>Emprender tu propio negocio</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$18,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/6">
+                <figure>
+                  <img src="./img/libro60a.png" alt="producto-1" />
+                  <figcaption><b>Controlar la ansiedad</b></figcaption>
+                  <p class="category"><i>Divulgativo</i></p>
+                  <div class="price"><b>$18,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/10">
+                <figure>
+                  <img src="./img/libro100a.png" alt="producto-1" />
+                  <figcaption><b>El poder de creer en ti</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$25,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <%- include('./partials/footer.ejs') %>
+  </body>
+
+  </html>

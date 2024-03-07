@@ -1,0 +1,51 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/productCart.css" />
+
+    <body>
+        <!-- HEADER -->
+        <%- include('../partials/header.ejs') %>
+
+            <section class="contenedor">
+                <!-- Contenedor de elementos -->
+                <div class="contenedor-items">
+                    <% libros.forEach(libro=> { %>
+                        <div class="item">
+                            <span class="titulo-item">
+                                <%= libro.title %>
+                            </span>
+                            <img src="img/<%= libro.imgTop %>" alt="<%= libro.alt %>" class="img-item">
+                            <div>
+                                <% if (libro.discount>0) { %>
+                                <span class="precio-desc-item">
+                                <% } else { %>
+                                <span class="precio-item">
+                                    <br>
+                                <% } %>
+                                    <%= new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    minimumFractionDigits: 2,
+                                    currency: "USD"
+                                  }).format(libro.price) %>
+                                </span>
+                            </div>
+                            <span class="precio-item">
+                                <% if (libro.discount > 0) { %>
+                                  <%= new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    minimumFractionDigits: 2,
+                                    currency: "USD"
+                                  }).format(libro.price - (libro.price * libro.discount / 100)) %>-<%= libro.discount %>% Off
+                                  <% } %>
+                            </span>
+
+                            <a class="boton-item" href="products/<%= libro.id %>" target="">Ver Detalle</span></a>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+    </body>
+    <!-- FOOTER -->
+    <%- include('../partials/footer.ejs') %>
+
+        </html>
