@@ -7,7 +7,7 @@ Tema: e-Comerce; sitio web de venta de libros "Digital Books". <br>
   <img src="https://github.com/malnieva/SiteDigitalBooks/blob/master/src/public/img/LOGO-DB-minimo.png" alt="Logo de comercio"/>
 </p>
 
-# DIGITAL BOOKS
+## DIGITAL BOOKS
 _Desde el año 2005 nos constituimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._
 
 _Nuestra Mision: llevar la lectura de una manera accesible a todo aquel que la necesite._
