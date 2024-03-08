@@ -12,10 +12,12 @@
     <body>
       <main>
         <section>
-          <form action="/productCreate" method="POST" enctype="multipart/form-data" class="createform">
+          <div class="text-danger">
+            <ul></ul>
+          </div>
+          <form name= "formulario" action="/productCreate" method="POST" enctype="multipart/form-data" class="createform">
             <div>
               <h1>INGRESAR NUEVO PRODUCTO DB</h1>
-
             </div>
 
             <label for="title">Titulo</label>
@@ -61,7 +63,7 @@
                           placeholder="Inserte Descripción detallada de Producto" class="control"></textarea>
 
                         <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
-                        <input type="file" name="imgTop"
+                        <input type="file" name="imgTop" id="file"
                           class="subir-archivo <%= locals.errors && errors.imgTop ? 'is-invalid' : null %>">
                         <% if (locals.errors && errors.imgTop) { %>
                           <div class="text-danger">
@@ -95,5 +97,7 @@
 
     <!-- FOOTER -->
     <%- include('../partials/footer.ejs') %>
+
+    <script type="text/javascript" src="../../public/js/validProd.js"></script>
 
       </html>

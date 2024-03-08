@@ -5,7 +5,7 @@ const db = require('../database/models');
 
 module.exports = [
 	check('fullName').notEmpty().withMessage('Tienes que escribir un nombre').bail()
-	.isLength({ min:2 }).withMessage('Escribir nombre y apellido de 6 caracteres como minimo'),
+	.isLength({ min:2 }).withMessage('Escribir nombre y apellido de 2 caracteres como minimo'),
 	check('email', 'Email invalido').exists()
 	.isEmail().withMessage('Debes escribir un formato de correo válido').trim().escape()
 	.custom(userEmail=> {
