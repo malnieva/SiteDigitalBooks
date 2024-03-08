@@ -4,7 +4,7 @@ Proyecto integrador de Curso Full Stack de "Digital House". <br>
 Tema: e-Comerce; sitio web de venta de libros "Digital Books". <br>
 
 <p align="center">
-  <img src="https://github.com/malnieva/SiteDigitalBooks/blob/master/src/public/img/LOGO-DB.png" alt="Logo de comercio"/>
+  <img src="https://github.com/malnieva/SiteDigitalBooks/blob/master/src/public/img/LOGO-DB-minimo.png" alt="Logo de comercio"/>
   # DIGITAL BOOKS
 </p>
 
