@@ -37,7 +37,8 @@ router.post('/productCreate', multerWithFields, validationProd, productControlle
 router.get('/productEdit/:id', guestDetailMiddleware, productController.productEdit);
 
 // Proceso de actualizacion del producto
-router.put('/productEdit/:id', multerWithFields, validationProd, productController.productUpDate);
+//router.put('/productEdit/:id', multerWithFields, validationProd, productController.productUpDate);
+router.put('/productEdit/:id', validationProd, productController.productUpDate);
 
 // mostrar form de borrado del producto
 router.get('/productDelete/:id', guestDetailMiddleware, productController.productDelete); 
@@ -46,15 +47,15 @@ router.get('/productDelete/:id', guestDetailMiddleware, productController.produc
 router.post('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
 
 // mostrar form de edicion del usuario
-//router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
+router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 // Proceso de actualizacion del usuario
-//router.post('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
+router.post('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
 
-// mostrar form de borrado del producto
+// mostrar form de borrado del usuario
 router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete); 
 
-// Proceso de eliminacion del producto
+// Proceso de eliminacion del usuario
 router.post('/userDelete/:id', guestDetailMiddleware, usersController.userDestroy); 
 
 //Rutas API

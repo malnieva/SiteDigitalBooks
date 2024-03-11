@@ -153,14 +153,15 @@ const controller = {
   //res.send('El libro que quieres editar no existe')
 
   userUpDate: async (req, res) => {
+
     try {
-      db.Usuario.update(
+      await db.Usuario.update(
         {
           fullName: req.body.fullName,
           email: req.body.email,
           //password: bcryptjs.hashSync(req.body.password, 10),
           category_id: req.body.category_id,
-          avatar: req.file?.filename || req.body.avatar,
+          //avatar: req.file?.filename || req.body.avatar,
         },
         {
           where: {

@@ -17,8 +17,7 @@ module.exports = [
 				}else{
 					resolve(true)
 				}
-			})
-			
+			})			
 		})
 	}),
 	check('password').notEmpty().withMessage('Tienes que escribir una contraseña').bail()

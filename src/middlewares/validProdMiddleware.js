@@ -8,13 +8,13 @@ module.exports = [
 	.isLength({ min:5 }).withMessage('Escribir titulo de 5 caracteres como minimo'),
 	check('description').isLength({ min:20 }).withMessage('Escribir Descripcion de 20 caracteres como minimo'),
 	check('imgTop').custom((value, { req }) => {
-		let file = req.file;
+		let files = req.files.imgTop[0];
 		let acceptedExtensions = ['.jpg', '.png', '.gif', 'jpeg'];
 
-		if (!file) {
+		if (!files) {
 			throw new Error('Tienes que subir una imagen');
 		} else {
-			let fileExtension = path.extname(file.originalname);
+			let fileExtension = path.extname(files.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
@@ -23,13 +23,13 @@ module.exports = [
 		return true;
 	}),
 	check('imgBack').custom((value, { req }) => {
-		let file = req.file;
+		let files = req.files.imgBack[0];
 		let acceptedExtensions = ['.jpg', '.png', '.gif', 'jpeg'];
 
-		if (!file) {
+		if (!files) {
 			throw new Error('Tienes que subir una imagen');
 		} else {
-			let fileExtension = path.extname(file.originalname);
+			let fileExtension = path.extname(files.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
