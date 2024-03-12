@@ -37,8 +37,7 @@ router.post('/productCreate', multerWithFields, validationProd, productControlle
 router.get('/productEdit/:id', guestDetailMiddleware, productController.productEdit);
 
 // Proceso de actualizacion del producto
-//router.put('/productEdit/:id', multerWithFields, validationProd, productController.productUpDate);
-router.put('/productEdit/:id', validationProd, productController.productUpDate);
+router.put('/productEdit/:id', multerWithFields, validationProd, productController.productUpDate);
 
 // mostrar form de borrado del producto
 router.get('/productDelete/:id', guestDetailMiddleware, productController.productDelete); 

@@ -12,7 +12,7 @@
 <body>
   <main>
     <section>
-      <form action="/productEdit/<%= libro.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+      <form id="formProduct" action="/productEdit/<%= libro.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
         class="createform">
         <div>
           <h1>MODIFICAR PRODUCTO DB</h1>
@@ -53,11 +53,11 @@
         <br>
         <div class="imagenEdit2">
           <label>Imagen de Tapa</label>
-          <img class="imagenEdit" name="image" src="/img/<%= libro.imgTop %>" alt="">
+          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgTop %>" alt="" id="productImageEditTop">
         </div>
         <p>
           <label>Agregar una imagen</label>
-          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgTop %>">
+          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgTop %>" id="inputProductImageEditTop">
           <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
         </p>
 
@@ -66,11 +66,11 @@
         <br>
         <div class="imagenEdit2">
           <label>Imagen de Portada</label>
-          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgBack %>" alt="">
+          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgBack %>" alt="" id="productImageEditBack">
         </div>
         <p>
           <label>Agregar una imagen</label>
-          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgBack %>">
+          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgBack %>" id="inputProductImageEditBack">
           <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
         </p>
 
